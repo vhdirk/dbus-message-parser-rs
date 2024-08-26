@@ -4,6 +4,8 @@ bitflags! {
     /// A struct representing the [message flags].
     ///
     /// [message flags]: https://dbus.freedesktop.org/doc/dbus-specification.html#message-bus-messages
+    #[repr(transparent)]
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
     pub struct MessageFlags: u8 {
         const NO_REPLY_EXPECTED = 0x01;
         const NO_AUTO_START = 0x02;
